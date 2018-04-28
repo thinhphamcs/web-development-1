@@ -1,0 +1,196 @@
+/*
+   New Perspectives on HTML and CSS, 7th Edition
+   Tutorial 8
+   Case Problem 2
+
+   Big Apple Physics Animation Styles
+   Author: ThinhPham & 244079
+   Date: 4/11/2018
+
+   Filename: ba_animate.css
+
+*/
+
+
+/* Transition Styles */
+
+/*
+Step 3:
+
+Add a style rule for the nav a selector that:
+a) displays the background image file ba_target.png centered horizontal and
+vertically with no tiling
+b) sets the size of the background image to 0%
+c) sets the hypertext font color to rgb(253, 240, 133), and
+d) adds a transition that changes the background size over 0.3 seconds and the
+font color over 0.8 seconds.
+*/
+nav a {
+  background: url(ba_target.png) center center no-repeat;
+  background-size: 0%;
+  color: rgb(253, 240, 133);
+  transition: background-size 0.3s, color 0.8s;
+}
+
+/*
+Step 4:
+
+Create a style rule for the nav a:hover selector to set the background size to
+100% and the font color to rgb(244, 130, 130).
+*/
+nav a:hover {
+  background-size: 100%;
+  color: rgb(244, 130, 130);
+}
+
+/* Animation Styles */
+
+/*
+Step 5:
+
+Create the moveRed animation containing the following key frames:
+A. At 0% time, set the left position of the red ball to 0 pixels and add a drop
+shadow with a horizontal offset of –40 pixels, a vertical offset of 20 pixels,
+a blur radius of 25 pixels, and a color value of rgb(51, 51, 51). (Hint: Use the
+filter property with the drop-shadow.)
+B. Jason wants the balls to appear to squish as they collide. At 49% time, use
+the transform property with the scaleX function to set the horizontal scale of
+the red ball to 1.
+C. At 50% time, set the left position of the red ball to 380 pixels. Set the
+drop shadow to an offset of 0 pixels in the horizontal and vertical direction
+with a blur of 0 pixels and a color of rgb(51, 51, 51). Set the value of scaleX
+function used with the transform property to 0.4.
+D. At 51% time, set the value of scaleX function to 1.0. e. At 100% time, set
+the left position of the red ball to 0 pixels. Set the offset of the drop shadow
+to –40 pixels in the horizontal direction and 20 pixels in the vertical direction
+with a blur of 25 pixels and a color of rgb(51, 51, 51)
+*/
+@keyframes moveRed {
+  0% {
+    left: 0px;
+    -webkit-filter: drop-shadow(-40px 20px 25px rgb(51, 51, 51));
+    filter: drop-shadow(-40px 20px 25px rgb(51, 51, 51));
+  }
+  49% {
+    transform: scaleX(1);
+  }
+  50% {
+    left: 380px;
+    -webkit-filter: drop-shadow(0px 0px 0px rgb(51, 51, 51));
+    filter: drop-shadow(0px 0px 0px rgb(51, 51, 51));
+    transform: scaleX(0.4);
+  }
+  51% {
+    transform: scaleX(1);
+  }
+  100% {
+    left: 0px;
+    -webkit-filter: drop-shadow(-40px 20px 25px rgb(51, 51, 51));
+    filter: drop-shadow(-40px 20px 25px rgb(51, 51, 51));
+  }
+}
+
+/*
+Step 6:
+
+Create an animation named moveblue that moves the blue ball across the animation box. Add the following:
+A. Copy the 0% to 51% key frames you used for the moveRed animation, changing
+the left property to right, so that all coordinates of the blue ball are measured
+from its right edge. Also change the horizontal offset of the drop shadow from
+–40 pixels to 40 pixels, so that the drop shadow appears to the right of the blue ball.
+B. At 100% time, set the right position to –700 pixels, and set horizontal and
+vertical offsets of the drop shadow to 120 pixels and 20 pixels respectively
+*/
+@keyframes moveBlue {
+  0% {
+    right: 0px;
+    -webkit-filter: drop-shadow(40px 20px 25px rgb(51, 51, 51));
+    filter: drop-shadow(40px 20px 25px rgb(51, 51, 51));
+  }
+  49% {
+    transform: scaleX(1);
+  }
+  50% {
+    right: 380px;
+    transform: scaleX(0.4);
+    -webkit-filter: drop-shadow(0px 0px 0px rgb(51, 51, 51));
+    filter: drop-shadow(0px 0px 0px rgb(51, 51, 51));
+  }
+  51% {
+    transform: scaleX(1);
+  }
+  100% {
+    right: -700px;
+    -webkit-filter: drop-shadow(120px 20px 25px rgb(51, 51, 51));
+    filter: drop-shadow(120px 20px 25px rgb(51, 51, 51));
+  }
+}
+
+/*
+Step 7:
+
+Create an animation named showtext that sets the opacity to 0 at 0% and 49% time
+and sets the opacity to 1 at 51% and 100% time.
+*/
+@keyframes showText {
+  0% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*
+Step 8:
+
+Create an animation named hidetext that sets the opacity to 1 at 0% and 49% time
+and sets the opacity to 0 at 51% and 100% time.
+*/
+@keyframes hideText {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*
+Step 9:
+
+Apply the moveRed animation to the redBall image over a 5-second interval with
+linear timing and infinite looping. Apply the moveBlue animation to the blueBall
+image over a 5-second interval also with linear timing and infinite looping.
+Apply the hideText animation to the redSpeed1 and blueSpeed1 div elements using
+the same timing parameters as the previous two animations. Finally, apply the
+showText animation to the redSpeed2 and blueSpeed2 div elements using the same
+timing parameters as with the other three animations.
+*/
+img#redBall {
+  animation: moveRed 5s linear infinite;
+}
+
+img#blueBall {
+  animation: moveBlue 5s linear infinite;
+}
+
+div#redSpeed1, div#blueSpeed1 {
+  animation: hideText 5s linear infinite;
+}
+
+div#redSpeed2, div#blueSpeed2 {
+  animation: showText 5s linear infinite;
+}

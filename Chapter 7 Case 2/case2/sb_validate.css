@@ -1,0 +1,42 @@
+/*
+   New Perspectives on HTML and CSS, 7th Edition
+   Tutorial 7
+   Case Problem 2
+
+   Spice Bowl Payment Form Validation Style Sheet
+   Author: ThinhPham & 244079
+   Date: 4/11/2018
+
+   Filename: sb_validate.css
+
+*/
+
+
+/* Validation Styles */
+
+/*
+Step 20:
+
+Insert the following style rules to perform inline validation:
+a. For every input element that is not a radio type and that has the focus, change
+the background color to rgb(255, 218, 165).
+(Hint: Use the attribute selector input:not([type='radio']) to select input
+elements that are not radio types.)
+b. For every input element that is not a radio type and that has the focus with
+a valid value, change the background color to rgb(215, 255, 215) and display the
+image file sb_valid.png with no tiling in the right edge of the input box.
+c. For every input element that is not a radio type and that has the focus with
+an invalid value, change the background color to rgb(255, 245, 215) and display
+the image file sb_invalid.png with no tiling in the right edge of the input box.
+*/
+input:focus:not([type='radio']) {
+       background-color: rgb(255, 218, 165);
+}
+
+input:focus:not([type='radio']) {
+       background: rgb(215, 255, 215) url(sb_valid.png) bottom right no-repeat;
+}
+
+input:focus:invalid:not([type='radio']) {
+       background: rgb(215, 245, 215) url(sb_invalid.png) bottom right no-repeat;
+}

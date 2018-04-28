@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 6
+   Case Problem 2
+
+   Sudoku Style Sheet
+   Author: ThinhPham & 244079
+   Date: 3/28/2018
+
+   Filename:         jpf_sudoku.css
+
+*/
+
+/* Table Styles */
+
+/*
+Step 11:
+
+You start by creating styles for the outer table. Go to the Table Styles section
+and create a style rule for the table element of the spuzzle class that:
+a) sets the table borders to collapse,
+b) sets the top/bottom margins to 0 pixels and the left/right margins to auto, and
+c) sets the width to 90%.
+*/
+table.spuzzle {
+  border-collapse: collapse;
+  margin: 0px auto;
+  width: 90%;
+}
+
+/*
+Step 12:
+
+For every td element, create a style rule that:
+a) adds a 5-pixel outset gray border and
+b) sets the width to 33.3%.
+*/
+td {
+  border: 5px outset grey;
+  width: 33.3%;
+}
+
+/*
+Step 13:
+
+For every th element, create a style rule that:
+a) sets the font color to gray and
+b) sets the right and bottom padding space to 10 pixels.
+*/
+th {
+  color: grey;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+/* Inner Table Styles */
+
+/*
+Step 14:
+
+Next, you create styles for the inner table that is placed within each cell of
+the outer table. Go to the Inner Table Styles section and create a style rule
+for the table element of the subTable class that:
+a) sets the table borders to collapse and
+b) sets the width to 100%.
+*/
+table.subTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/*
+Step 15:
+
+For every td element within the subTable table, create a style rule that:
+a) adds an inset box shadow with offset values of 0 pixels in the horizontal and
+vertical directions with a blur of 15 pixels,
+b) adds a 1-pixel solid black border,
+c) displays the text in a blue font,
+d) sets the cell height to 40 pixels, and
+e) centers the cell text in the horizontal and vertical directions.
+*/
+table.subTable td {
+  box-shadow: inset 0px 0px 15px;
+  border: 1px solid black;
+  color: blue;
+  height: 40px;
+  text-align: center;
+}
+
+/*
+Step 16:
+
+For every td element that is nested within a td element of the goldBox class,
+create a style rule that sets the background color to rgb(228, 199, 42)
+*/
+td.goldBox {
+background-color: rgb(228, 199, 42);
+}
+
+/*
+Step 17:
+
+For every td element that is nested within a td element of the greenBox class,
+create a style rule that sets the background color to rgb(203, 229, 130).
+*/
+td.greenBox {
+background-color: rgb(203, 229, 130);
+}

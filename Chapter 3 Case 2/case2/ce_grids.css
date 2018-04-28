@@ -1,0 +1,114 @@
+@charset "utf-8";
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 3
+   Case Problem 2
+
+   Style Sheet for Grids used in the Costume Expressions Front Page
+   Author: ThinhPham & 244079
+   Date: 2/23/2018
+
+   Filename: ce_grids.css
+
+*/
+
+
+/* Grid Rows Styles */
+
+/*
+Step 4:
+
+Each div element of the row class
+Set container to 100%
+Displaying the row only when it’s clear of floated content on both margins
+*/
+div.row {
+  width: 100%;
+  clear: both;
+}
+
+/*
+Step 5:
+
+Create a style rule to allow grid rows to expand around all of their floated
+content.
+*/
+div.row::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+
+/* Grid Columns Styles */
+
+/*
+Step 6:
+
+Create a style rule to float every div element whose class
+name begins with column on the left.
+*/
+div[class^="column"] {
+  float: left;
+}
+
+/*
+Step 7:
+
+Create style rules for div elements belonging to the following classes:
+column100, column50, column33, column67, column25, column75, column20, column40,
+column60, and column80 so that the width of each column is a percent equal
+to the size value.
+*/
+div.column100 {
+  width: 100%;
+}
+
+div.column50 {
+  width: 50%;
+}
+
+div.column33 {
+  width: 33%;
+}
+
+div.column67 {
+  width: 67%;
+}
+
+div.column25 {
+  width: 25%;
+}
+
+div.column75 {
+  width: 75%;
+}
+
+div.column20 {
+  width: 20%;
+}
+
+div.column40 {
+  width: 40%;
+}
+
+div.column60 {
+  width: 60%;
+}
+
+div.column80 {
+  width: 80%;
+}
+
+/* Grid Spacing Styles */
+
+/*
+Step 8:
+
+Create a style rule to apply the Border Box model to the div elements belonging
+to the following classes: container, row, classes that begin with column, cell,
+and a elements nested within div elements belonging to the cell class.
+*/
+div.container, div.row, div[class^="column"], div.cell, div.cell a {
+  box-sizing: border-box;
+}

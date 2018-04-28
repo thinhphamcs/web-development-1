@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!--
+      New Perspectives on HTML5 and CSS3, 7th Edition
+      Tutorial 7
+      Case Problem 2
+
+      Spice Bowl Payment Form
+      Author: ThinhPham & 244079
+      Date: 4/11/2018
+
+      Filename:   sb_payment.html
+
+   -->
+
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>Spice Bowl Payment Form</title>
+   <link href="sb_reset.css" rel="stylesheet" />
+   <link href="sb_styles.css" rel="stylesheet" />
+
+   <!--
+   Step 2:
+
+   Add links to the sb_forms.css and sb_validate.css style sheet files to the
+   document head. Add a script element to load the sb_script.js file.
+   -->
+   <link href="sb_forms.css" rel="stylesheet" />
+   <link href="sb_validate.css" rel="stylesheet" />
+</head>
+
+<body>
+   <header>
+      <img src="sb_logo.png" alt="The Spice Bowl" />
+
+      <!--
+      Step 3:
+
+      Insert a form element with the ID login. Have the form use the
+      http://www.example.com/sb/login via the post method.
+      -->
+      <form id="login" action="http://www.example.com/sb/login" method="post">
+        <!--
+        Step 4:
+
+        Within the login form, insert the following fields and controls:
+        a. A text input box with the ID userBox for the username field.
+        Add the placeholder text username.
+        b. A text input box with the ID pwdBox for the password field.
+        Add the placeholder text password
+        -->
+        <input type="text" id="userBox" placeholder="username"/>
+        <input type="text" id="pwdBox" placeholder="password"/>
+      </form>
+
+      <nav> <a id="navicon" href="#"><img src="sb_navicon.png" alt="" /></a>
+         <ul>
+            <li><a href="#">Spices</a></li>
+            <li><a href="#">Recipes</a></li>
+            <li><a href="#">My Cart</a></li>
+            <li><a href="#">My Account</a></li>
+            <li><a href="#">Contact Us</a></li>
+         </ul>
+      </nav>
+   </header>
+
+   <section>
+      <h1>Payment Form</h1>
+      <!--
+      Step 5:
+
+      Insert a form element that employs action at
+      http://www.example.com/sb/payment via the post method. Assign the web form
+      the id payment.
+      -->
+      <form id="payment" action="http://www.example.com/sb/payment" method="post">
+        <!--
+        Step 6:
+
+        Insert a field set with the id billing to the payment form. Add the
+        legend Billing Information (required) to the field set.
+        -->
+        <fieldset id="billing">
+          <legend>Billing Information (required)</legend>
+          <!--
+          Step 7:
+
+          From the book image
+          -->
+          <label for="fName">First Name</label>
+          <input name="fName" id="firstBox" type="text" required="required"/>
+
+          <label for="lName">Last Name</label>
+          <input name="lName" id="lastBox" type="text" required="required"/>
+
+          <label for="street">Street Address</label>
+          <input name="street" id="streetBox" type="text" required="required"/>
+
+          <label for="street2">Street Address (2)</label>
+          <input name="street2" id="streetBox2" type="text"/>
+
+          <label for="city">City</label>
+          <input name="city" id="cityBox" type="text" required="required"/>
+
+          <!--
+          Step 8:
+
+          Create a data list with the ID stateList containing the two-letter
+          abbreviations of all the states. (You can use the list of abbreviations
+          in the sb_state.txt file.) Apply the data list to the stateBox input
+          text box
+          -->
+          <label for="state">State</label>
+          <input name="state" id="stateBox" type="text" required="required"/>
+            <datalist id="states">
+            <option value="AK">AK</option>
+            <option value="AL">AL</option>
+            <option value="AR">AR</option>
+            <option value="AZ">AZ</option>
+            <option value="CA">CA</option>
+            <option value="CO">CO</option>
+            <option value="CT">CT</option>
+            <option value="DE">DE</option>
+            <option value="FL">FL</option>
+            <option value="GA">GA</option>
+            <option value="HI">HI</option>
+            <option value="ID">ID</option>
+            <option value="IL">IL</option>
+            <option value="IN">IN</option>
+            <option value="IA">IA</option>
+            <option value="KS">KS</option>
+            <option value="KY">KY</option>
+            <option value="LA">LA</option>
+            <option value="ME">ME</option>
+            <option value="MD">MD</option>
+            <option value="MA">MA</option>
+            <option value="MI">MI</option>
+            <option value="MN">MN</option>
+            <option value="MS">MS</option>
+            <option value="MO">MO</option>
+            <option value="MT">MT</option>
+            <option value="NE">NE</option>
+            <option value="NV">NV</option>
+            <option value="NH">NH</option>
+            <option value="NJ">NJ</option>
+            <option value="NM">NM</option>
+            <option value="NY">NY</option>
+            <option value="NC">NC</option>
+            <option value="ND">ND</option>
+            <option value="OH">OH</option>
+            <option value="OK">OK</option>
+            <option value="OR">OR</option>
+            <option value="PA">PA</option>
+            <option value="RI">RI</option>
+            <option value="SC">SC</option>
+            <option value="SD">SD</option>
+            <option value="TN">TN</option>
+            <option value="TX">TX</option>
+            <option value="UT">UT</option>
+            <option value="VT">VT</option>
+            <option value="VA">VA</option>
+            <option value="WA">WA</option>
+            <option value="WV">WV</option>
+            <option value="WI">WI</option>
+            <option value="WY">WY</option>
+            </datalist>
+
+          <!--
+          Step 9:
+
+          The text of the zip field should follow the ^\d{5}(-\d{4})?$ regular
+          expression pattern. The text of the phone field should follow the
+          ^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$ pattern. Note that both
+          regular expression patterns can be found in the sb_regex.txt file
+
+          Step 10:
+
+          Set the default value of the country field to United states
+          -->
+          <label for="zip">ZIP/Postal Code</label>
+          <input name="zip"pattern="^\d{5}(\-\d{4})?$" id="zipBox" type="text"/>
+
+          <label for="country">Country</label>
+          <input name="country" value="United States" id="countryBox" type="text" required="required"/>
+
+          <label for="phone">Phone number</label>
+          <input name="phone" id="phoneBox" type="tel" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" required="required"/>
+		</fieldset>
+
+    <!--
+    Step 11:
+
+    Create a field set with the ID creditCard, which you use to insert credit
+    card fields. Add the legend Credit Card (required)
+    -->
+		<fieldset id="creditCard">
+                  <legend>Credit Card (required)</legend>
+                  <!--
+                  Step 12:
+
+                  Within the creditCard field set, insert another field set
+                  containing four label elements, with each label element
+                  belonging to the cardLabel class. Within each of the four label
+                  elements, insert an option button from the cCard field with the
+                  value amex, discover, master, and visa. Make cCard a required
+                  field. Follow each option button with an image element containing
+                  the image of its corresponding credit card image using the
+                  sb_amex.png, sb_discover.png, sb_master.png, and sb_visa.png files
+                  -->
+                  <fieldset required="required">
+                     <label class="cardLabel">
+                        <input type="radio" name="cCard"/> <img src="sb_amex.png"/>
+                     </label>
+                     <label class="cardLabel">
+                        <input  type="radio" name="cCard"/> <img src="sb_discover.png"/>
+                     </label>
+                     <label class="cardLabel">
+                        <input  type="radio" name="cCard"/> <img src="sb_master.png"/>
+                     </label>
+                     <label class="cardLabel">
+                        <input type="radio" name="cCard"/> <img src="sb_visa.png"/>
+                     </label>
+                  </fieldset>
+                  <!--
+                  Step 13:
+
+                  Insert a label containing the text Credit Card Number associated
+                  with the cardBox input control. Create an input text box with
+                  the ID cardbox for the cardNumber field. Make the field cardNumber
+                  required and have the field value follow the regular expression
+                  pattern for credit card numbers (using the regular expression
+                  in the sb_regex.txt file).
+                  -->
+                  <label for="cardNumber">Credit Card Number</label>
+                  <input name="cardNumber" id="cardBox" required="required"
+                  pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$"/>
+
+                  <!--
+                  Step 14:
+
+                  Create the Expiration Date label associated with the monthList control
+                  -->
+                  <label>Expiration Date</label>
+                  <select id="monthList" required="required">
+                     <!--
+                     Step 15:
+
+                     Add a selection list with the ID monthList for the cardMonth
+                     field. Make the cardMonth field required. Populate the
+                     selection list with the option text “- -Month- -”,
+                     “January (01)”, “February (02)” and so forth up to
+                     “December (12)”. For the “- -Month- -”, set the field value
+                     to an empty text string. For the month options, insert the
+                     month value from 1 up to 1
+                     -->
+                     <option value="--Month--">--Month--</option>
+                     <option value="January (01)">January (01)</option>
+                     <option value="February (02)">February (02)</option>
+                     <option value="March (03)">March (03)</option>
+                     <option value="April (04)">April (04)</option>
+                     <option value="May (05)">May (05)</option>
+                     <option value="June (06)">June (06)</option>
+                     <option value="July (06)">July (07)</option>
+                     <option value="August (08)">August (08)</option>
+                     <option value="September (09)">September (09)</option>
+                     <option value="October (10)">October (10)</option>
+                     <option value="November (11)">November (11)</option>
+                     <option value="December (12)">December (12)</option>
+                  </select>
+                  <!--
+                  Step 16:
+
+                  Add a selection list with the ID yearList for the cardYear field.
+                  Make the cardYear field required. Populate the selection list
+                  with the option text “- -Year- -”, “2017”, “2018”, “2019”,
+                  “2020”, and “2021”. For the “- -Year- -” set the field value
+                  to an empty text string and, for the year options, insert the
+                  4-digit year value.
+                  -->
+                  <select id="yearList" required="required">
+                     <option value="--Year--">--Year--</option>
+                     <option value="2017">2017</option>
+                     <option value="2018">2018</option>
+                     <option value="2019">2019</option>
+                     <option value="2020">2020</option>
+                     <option value="2021">2021</option>
+                  </select>
+
+                  <!--
+                  Step 17:
+
+                  Create a label with the text csc associated with the cscBox.
+                  Add a text input box with the ID cscbox for the required csc
+                  field. Have the csc field value follow the regular expression
+                  pattern ^\d{3}$. Set the maximum length of the field value to
+                  3 characters and display the placeholder text nnn
+                  -->
+                  <label for="csc">CSC</label>
+                  <input id="cscBox" pattern="^\d{3}$" placeholder="nnn" required="required"/>
+       </fieldset>
+         <!--
+         Step 18:
+
+         Insert a button element of the submit type.
+         Within the button, insert the sb_button.png inline image with the
+         alternate text next. (Note: The text for the button is part of the button
+         image, so the value attribute is not needed.)
+         -->
+	       <button alt="next" type="button"><img src="sb_button.png"/></button>
+      </form>
+      <aside>
+         <h1>Menu Ideas</h1>
+         <h2>Salt-Roasted Pecans</h2>
+         <ul>
+            <li>2 cups pecans</li>
+            <li>3 Tbs. butter, melted</li>
+            <li>1 1/4 tsp. fine sea salt</li>
+         </ul>
+         <p>Preheat oven to 325&deg;. Toss pecans and butter together;
+            add salt and toss again.  Spread in a single layer on a baking
+            sheet.  Bake about 15 minutes.  Cook on baking sheet.
+         </p>
+
+         <h2>Dried Beef Sticks</h2>
+         <ul>
+            <li>5 lbs. ground chuck</li>
+            <li>5 Tbs. quick salt</li>
+            <li>3 tsp. mustard seed</li>
+            <li>2 tsp. granulated garlic</li>
+            <li>2 tsp. cracked pepper</li>
+            <li>1 Tbs. hickory smoked salt</li>
+            <li>1 Tbs. liquid smoke</li>
+         </ul>
+         <p>Mix beef and season.  Place in a large covered container
+            for three days.
+            On third day, shape beef into sticks, and bake at 150&deg; for
+            8 hours (turn half-way through).
+         </p>
+      </aside>
+
+   </section>
+
+   <footer>
+      <nav>
+         <ul>
+            <li class="newgroup"><a href="#">Home</a></li>
+            <li><a href="#">Keyword Search</a></li>
+
+            <li class="newgroup"><a href="#">Spices</a></li>
+            <li><a href="#">Seasonings</a></li>
+            <li><a href="#">Blends</a></li>
+            <li><a href="#">Salts &amp; Peppers</a></li>
+            <li><a href="#">Popcorn Seasonings</a></li>
+            <li><a href="#">Dip Mixes</a></li>
+            <li><a href="#">Bulk Spices</a></li>
+            <li><a href="#">Extracts</a></li>
+            <li><a href="#">Flavorings</a></li>
+
+            <li class="newgroup"><a href="#">Spice Jars</a></li>
+            <li><a href="#">Spice Jar Labels</a></li>
+            <li><a href="#">Spice Sets</a></li>
+            <li><a href="#">Mortar &amp; Pestles</a></li>
+
+            <li class="newgroup"><a href="#">Cookbooks</a></li>
+            <li><a href="#">Online Recipes</a></li>
+            <li><a href="#">Forums</a></li>
+
+            <li class="newgroup"><a href="#">My Account</a></li>
+            <li><a href="#">Checkout</a></li>
+            <li><a href="#">Order History</a></li>
+            <li><a href="#">Shipping Info</a></li>
+
+            <li class="newgroup"><a href="#">Tech Support</a></li>
+            <li><a href="#">Hours</a></li>
+            <li><a href="#">Contact Us</a></li>
+         </ul>
+      </nav>
+   </footer>
+</body>
+</html>

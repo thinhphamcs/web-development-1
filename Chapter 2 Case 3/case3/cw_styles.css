@@ -1,0 +1,278 @@
+/*
+Step 5:
+Insert the @charset rule, setting style sheet to utf-8
+*/
+@charset "utf-8";
+
+/*
+Step 6:
+Import the contents of cw_layout.css
+*/
+@import "cw_layout.css";
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 2
+   Case Problem 3
+
+   Civil War History Style Sheet
+   Author: Thinh Pham & 244079
+   Date: 2/9/2018
+
+   Filename: cw_styles.css
+
+*/
+
+
+/* Structural Styles */
+
+/*
+Step 7:
+Set background color for window browser
+*/
+html {
+  background-color: rgb(151, 151, 151);
+}
+
+/*
+Step 8:
+Set the backgound color for body
+Set the font stack
+*/
+body {
+   background-color: rgb(180, 180, 223);
+   font-family: Verdana, Geneva, sans-serif;
+}
+
+/*
+Step 9:
+Set h1, h2 equals to normal weight
+*/
+h1, h2 {
+  weight: normal;
+}
+
+/*
+Step 10:
+Hypertext link nested within a navigation list
+and removes underlining from the text.
+
+Note: when it said nested within meaning no '>'
+*/
+nav a {
+  text-decoration: none;
+}
+
+/*
+Step 11:
+Create a style rule for the footer sets the text color and the background color
+Set the font size
+Horizontally center the footer text
+Set the top/bottom padding
+*/
+footer {
+  color: white;
+  background-color: rgb(101, 101, 101);
+  font-size: 0.8em;
+  text-align: center; /* To horizontally center text */
+  vertical-align: middle; /* To horizontally center text */
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+/* Body Header Styles */
+
+/*
+Step 12:
+Sets the background color for the body header
+*/
+body > header {
+  background-color: rgb(97, 97, 211);
+}
+
+/*
+Step 13:
+For h1 in body Header
+Sets font-size
+Sets text color
+Sets font-stack
+Sets margin
+*/
+body > header > h1 {
+  font-size: 4vw;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Limelight", cursive;
+  margin: 0px;
+  padding-left: 20px; /* I added this, to make it looks like example form book*/
+}
+
+/*
+Step 14:
+Create a style rule for the span element nested within the h1 heading
+that is nested within the body header, setting the text color
+*/
+body header h1 span {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Navigation Styles */
+
+/*
+Step 15:
+Format the navigation that has the ID mainLinks. For hypertext links within this
+navigation list, set the top and bottom padding space to 5 pixels.
+*/
+nav#mainLinks li a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/*
+Step 16:
+For previously visited and unvisited links within the mainLinks navigation list,
+create a style rule that displays the hypertext links in a white font.
+*/
+nav#mainLinks a:link, nav#mainLinks a:visited {
+	color: white;
+}
+
+/*
+Step 17:
+For every hovered or active link within the navigation list,
+Create a style rule to set the text color and background color
+*/
+nav#mainLinks a:hover, nav#mainLinks a:active {
+	color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(51, 51, 51, 0.5);
+}
+
+/* Outline Styles */
+
+/*
+Step 18:
+Outline that appears on the page’s left column. The navigation list in this
+outline has the ID outline. Create a style rule for this navigation list that
+sets the text color and the font size
+sets the backgound color <-- professor recommends
+*/
+nav#outline {
+  color: rgb(51, 51, 51);
+  font-size: 0.8em;
+  background-color: rgb(36, 168, 198); /* professor recommends */
+}
+
+/*
+Step 19:
+Horizontally center the h1 headings within the outline navigation list.
+*/
+nav#outline > h1 {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/*
+Step 20:
+For the first level ol elements that are a direct child of the outline
+navigation list, create a style rule that sets the line height to 2em,
+the top/bottom margin to 0 pixels and the left/right margin to 5 pixels.
+Display the list marker as an upper-case Roman numeral
+*/
+nav#outline > ol > li {
+  line-height: 2em;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  list-style-type: upper-roman;
+}
+
+/*
+Step 21:
+Display the second level of ol elements nested within the outline navigation
+list with an upper-case letter as the list marker.
+*/
+nav#outline > ol > li > ol > li {
+  list-style-type: upper-alpha;
+}
+
+/*
+Step 22:
+For previously visited and unvisited links within the Outline navigation list,
+create a style rule that displays color
+*/
+nav#outline a:link, nav#outline a:visited {
+	color: rgb(101, 101, 101);
+}
+
+/*
+Step 23:
+For every hovered or active link within the navigation list,
+Create a style rule to set the text color and text underline
+*/
+nav#outline a:hover, nav#outline a:active {
+	color: rgb(97, 97, 211);
+  text-decoration: underline;
+}
+
+/* Section Styles */
+
+/*
+Step 24:
+Create a style rule that sets the background color of the section element
+*/
+section {
+  background-color: rgb(220, 220, 220);
+}
+
+/*
+Step 25:
+Creating a style rule for the section header h1 selector that sets the font size
+and left padding
+*/
+section > header > h1 {
+  font-size: 2.2em;
+  padding-left: 10px;
+}
+
+/* Article Styles */
+
+/*
+Step 26:
+Create a style rule for h2 headings within the article element
+that sets the font size
+*/
+article > h2 {
+  font-size: 1.4em;
+}
+
+/*
+Step 27:
+Display the first letter of the first paragraph within the article element that
+sets font size and vertically aligned with the baseline of the surrounding text
+
+Note: to use this class AND this class do like this
+*/
+article p:first-of-type:first-letter {
+  font-size: 2em;
+  vertical-align: baseline;
+}
+
+/* Aside Styles */
+
+/*
+Step 28:
+Create a style rule that sets the font size of text in the aside element
+*/
+aside {
+  font-size: 0.9em;
+}
+
+/*
+Step 29:
+Create a style rule that sets the font size and horizontally center the texts
+*/
+aside > h1 {
+  font-size: 1.4em;
+  text-align: center;
+  vertical-align: middle;
+}

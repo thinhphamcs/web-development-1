@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+	<head>
+		<!--
+			New Perspectives on HTML5 and CSS3, 7th Edition
+			Tutorial 1
+			Case Problem 3
+			
+			Diane's Run Race Information
+			Author: Thinh Pham & 244079
+			Date: 1/19/2018 
+
+			Filename: dr_info.html
+		-->
+		
+		<!-- These stuff are already here -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Diane's Run Race Info</title>
+		
+		<!-- Link the document to the ms_base.css and ms_layout2.css style sheet files. -->
+		<link rel="stylesheet" type="text/css" href="dr_base.css" media="screen"/>
+		<link rel="stylesheet" type="text/css" href="dr_layout2.css" media="screen"/>
+	</head>
+
+	<body>	
+		<!-- This header contains a navigation bar filled with unordered list which holds 3 listed items as a hyper link to another page -->
+		<header>
+			<nav>
+				<ul>
+				  <li><a href="dr_index.html"> Home </a></li>
+				  <li><a href="dr_info.html"> Race </a></li>
+				  <li><a href="dr_faq.html"> FAQ </a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<!-- 
+			This section contains one big paragraph from a text files
+			The header contains an image inline with 'Race Information' heading one
+			Insert a paragraph then mark it with time element and using 'datetime' attribute
+			Mark 1 paragraph
+			Mark 3 heading 2s
+			Mark 3 unordered list
+		-->
+		<section>
+			<header>
+				<p>Page last updated: <time datetime="2017-08-29">Tuesday, August 29, 2017</time></p>
+				<h1><img src="dr_logo.png" alt="Diane’s Run"/>Race Information</h1>
+			</header>
+			<p>The 2017 Diane's Run will be held Saturday, September 9th in Cheyenne starting at
+			Prairie Park. All race fees are non-refundable and non-transferable, even in the event 
+			of inclement weather. Two races are offered: a 5K (3.1 miles) and a 10K (6.2 miles) event.
+			We also offer a 1-mile Family Fun Walk.</p>
+
+
+			<h2>Race Times</h2>
+			<ul>5K Race starts promptly at 10 a.m.
+			10K Race starts promptly at 11 a.m.
+			Family Fun Walk starts at noon
+			Celebration lunch and reception opens at 1:00 p.m.</ul>
+
+
+			<h2>Goodies and Stuff</h2>
+			<ul>A state-of-the-art running vest
+			A welcome pack with fund-raising advice and training tips
+			A goody bag with fun surprises
+			Refreshments from aid stations during and after the races
+			Tickets to a delicious post-race reception and meal</ul>
+
+
+			<h2>Notes</h2>
+			<ul>Registration will remain open until 10:00pm on Friday, September 8th.
+			Registration fees for the 5K and 10K races increase to $40 after Friday, September 1st.
+			Race donations will be accepted through December 16th of this year.</ul>
+		</section>
+		
+		<!-- The last text will be here in this footer with 2 special characters -->
+		<footer>
+			 Diane’s Run &#9829; 45 Mountain Drive &#9829; Cheyenne, WY 82001
+		</footer>
+	</body>
+</html>

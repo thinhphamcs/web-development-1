@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 3
+   Case Problem 3
+
+   Layout Style Sheet for A Soldier's Scrapbook
+   Author: ThinhPham & 244079
+   Date: 2/26/2018
+
+   Filename: ss_layout.css
+
+*/
+
+
+/* Article Styles */
+
+/*
+Step 4:
+
+Create a style rule to float the article element on the left margin
+set its width to 384 pixels.
+*/
+article {
+  float: left;
+  width: 384px;
+}
+
+/* First Line and Drop Cap Styles */
+
+/*
+Step 5:
+
+Create a style rule for the first paragraph of the article element and
+the first line of that paragraph, setting the font size to 1.25em and
+the font variant to small-caps.
+*/
+article p:first-of-type::first-line {
+	font-size: 1.25em;
+	Font-variant: small-caps;
+}
+
+/*
+Step 6:
+
+Create a style rule for the article’s first paragraph and first letter that
+applies the following styles:
+a) sets the size of the first letter to 4em in a serif font and floats it on the left
+b) sets the line height to 0.8em
+c) sets the right and bottom margins to 5 pixels.
+*/
+article p:first-of-type::first-letter {
+	font-size: 4em;
+	font-family: serif;
+	float: left;
+	line-height: 0.8em;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+/* Aside Styles */
+
+/*
+Step 7:
+
+Create a style rule that sets the width of the aside element to 768 pixels and
+floats it on the left margin.
+*/
+aside {
+	width: 768px;
+	float: left;
+}
+
+/* Map Styles */
+
+/*
+Step 8:
+
+Create a style rule for this element that sets its width to 688 pixels.
+Center the map by setting its top/bottom margins to 20 pixels and
+its left/right margins to auto. Place the map using relative positioning.
+*/
+#battleMap {
+	width: 688px;
+	margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+	position: relative;
+}
+
+/*
+Step 9:
+
+Create a style rule for this element that displays it as a block with a width of 100%.
+*/
+#mapImage {
+  display: block;
+  width: 100%;
+}
+
+/* Interactive Map Styles */
+
+/*
+Step 10:
+
+Create style rules that position each of the six map markers onto the battle map
+The markers are placed within hypertext links.
+Create a style rule for every a element of the battleMarkers class that places
+the hypertext link using absolute positioning.
+*/
+a.battlemarkers {
+	position: absolute ;
+}
+
+/*
+Step 11:
+
+Create style rules for the six a elements with IDs ranging from
+marker1 to marker6, placing them at the following (top, left) coordinates:
+*/
+a#marker1 {position: absolute; top:220px; left:340px;}
+a#marker2 {position: absolute; top:194px; left:358px;}
+a#marker3 {position: absolute; top:202px; left:400px;}
+a#marker4 {position: absolute; top:217px; left:452px;}
+a#marker5 {position: absolute; top:229px; left:498px;}
+a#marker6 {position: absolute; top:246px; left:544px;}
+
+/* Map Information Styles */
+
+/*
+Step 12:
+
+Create a style rule that hides this class of elements so that this information
+is not initially visible on the page.
+*/
+.mapInfo {
+	display: none;
+}
+
+/*
+Step 13:
+
+Create a style rule that changes the map information’s display property in
+response to the mouse pointer hovering over the corresponding map marker.
+Since the map information follows the map marker in the HTML file, use the
+following selector (see Figure 2-12) to select the map information
+corresponding to the hovered map marker: a.battleMarkers:hover + div.mapInfo.
+Write a style rule for this selector that sets its display property to block.
+*/
+a.battleMarkers:hover + div.mapInfo {
+	display:block;
+}

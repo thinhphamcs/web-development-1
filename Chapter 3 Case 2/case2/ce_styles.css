@@ -1,0 +1,172 @@
+@charset "utf-8";
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 3
+   Case Problem 2
+
+   Style Sheet for Costume Expressions Front Page
+   Author: ThinhPham & 244079
+   Date: 2/23/2018
+
+   Filename: ce_styles.css
+*/
+
+
+/* Window and Body Styles */
+
+/*
+Step 10:
+
+Create a style rule to set the background color of the browser window
+*/
+html {
+  background-color: rgb(101, 101, 101);
+}
+
+/*
+Step 11:
+
+Create a style rule for the body element that:
+a) sets the background color to white,
+b) sets the default font to the stack: Verdana, Geneva, Arial, sans-serif,
+c) centers the page by setting the top/bottom margins to 20 pixels and
+the left/right margins to auto.
+d) sets the width of the page body to 95% ranging from 320 pixels up to 960 px.
+
+Step 19:
+
+Set the position property of the body element to relative.
+*/
+body {
+  background-color: white;
+  font-family: Verdana, Geneva, Arial, sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  min-width: 320px;
+  max-width: 960px;
+  position: relative;
+}
+
+/*
+Step 12:
+
+Insert style rules to display all images in the document as blocks with
+widths of 100%.
+*/
+img {
+  display: block;
+  width: 100%;
+}
+
+/*
+Step 13:
+
+Insert a style rule to remove all underlining from hypertext links within
+navigation lists.
+*/
+nav a {
+  text-decoration: none;
+}
+
+/* Body Header Styles */
+
+/*
+Step 14:
+
+Format the links that are displayed in the header at the top of the web page.
+To format the links, create a style rule that sets the background color of the
+body header to rgb(191, 68, 70) and sets the height to 40 pixels.
+*/
+header {
+  background-color: rgb(191, 168, 170);
+  height: 40px;
+}
+
+/*
+Step 15:
+
+Create a style that displays all list items within the navigation unordered list
+in the body header as blocks, floated on the left, with a right margin of 20px
+and top/bottom padding of 10 pixels with left/right padding of 0 pixels.
+*/
+header nav ul li {
+  display: block;
+  float: left;
+  margin-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/*
+Step 16:
+
+Create a style rule to set the font size of hypertext links within the body
+header navigation list to 0.9em with a color value of rgb(51, 51, 51)
+for both visited and non-visited links. Change the text color to
+rgb(255, 211, 211) when the user hovers over or activates those links.
+*/
+nav a:link, nav a:visited {
+  font-size: 0.9em;
+  color: rgb(51, 51, 51);
+}
+
+nav a:hover, nav a:active {
+  font-size: 0.9em;
+  color: rgb(255, 211, 211);
+}
+
+/* DIV Container Styles */
+
+/*
+Step 17:
+
+Add some additional spacing between the images and the edge of the page body.
+To add this spacing, create a style rule that sets the right and bottom padding
+of the div element with the id container to 8 pixels.
+*/
+div#container {
+  padding-right: 8px;
+  padding-bottom: 8px;
+}
+
+/*
+Step 18:
+
+For every a element within a div element belonging to the cell class,
+create a style rule to:
+a) display the hypertext link as a block with a width of 100%
+b) set the left and top padding to 8 pixels.
+*/
+div.cell a {
+  display: block;
+  width: 100%;
+  padding-left: 8px;
+  padding-top: 8px;
+}
+
+/* Footer Styles */
+
+/*
+Step 19:
+
+Create a style rule for the footer element to do the following:
+a) set the position property of the footer to absolute with a right coordinate
+and bottom coordinate of 8 pixels,
+b) set the text of the footer to rgb(143, 33, 36),
+c) right-align the footer text,
+d) set the font size to 2vmin so that the text resizes automatically with the
+width and/or height of the browser window.
+*/
+footer {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  color: rgb(143, 33, 36);
+  text-align: right;
+  font-size: 2vmin;
+}

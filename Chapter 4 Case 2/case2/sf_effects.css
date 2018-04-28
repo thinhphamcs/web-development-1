@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 4
+   Case Problem 2
+
+   Save your Fork Graphic Design Styles
+   Author: ThinhPham & 244079
+   Date: 3/15/2018
+
+   Filename: sf_effects.css
+
+*/
+
+/* Body Header Styles */
+
+/*
+Step 3:
+Create a style rule for the body element to add drop shadows to the left and
+right border of the page body with an offset of 10 pixels, a blur of 50 pixels,
+and the color rgb(51, 51, 51). Note that the right border is a mirror image of
+the left border.
+*/
+body {
+  box-shadow: rgb(51, 51, 51) 10px 10px 50px,
+              rgb(51, 51, 51) -10px 0px 50px; /* wouldn't it be 10 for y? */
+}
+
+/* Navigation Tabs List Styles */
+
+/*
+Step 4:
+Create a style rule for the body > header nav.tabs selector that changes the
+background to the image files f_back1.png with no tiling, centered horizontally
+and vertically within the element and sized to cover the entire navigation list.
+*/
+body > header nav.tabs {
+  background: url(sf_back1.png) no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/*
+Step 5:
+Create a style rule for the body > header nav.tabs li selector that transforms
+the list item by setting the perspective of its 3D space to 50 pixels and
+rotating it 20° around the x-axis.
+*/
+body > header nav.tabs li {
+  transform: perspective(50px) rotateX(20deg);
+}
+
+/*
+Step 6:
+Create a style rule for the body > header nav.tabs li selector that uses the
+pseudo-element hover that changes the background color to rgb(231, 231, 231).
+*/
+body > header nav.tabs li:hover {
+  background-color: rgb(231, 231, 231);
+}
+
+/* Left Section Styles */
+
+/*
+Step 7:
+Create a style rule for the section#left nav.vertical selector that adds a
+1-pixel solid border with color value rgb(20, 167, 170) and has a radius of
+25 pixels at each corner.
+*/
+section#left nav.vertical {
+  border: 1px solid rgb(20, 167, 170);
+  border-radius: 25px;
+}
+
+
+/*
+Step 8:
+Create a style rule for h1 elements nested within the left section vertical
+navigation list that sets the top-left and top-right corner radii to 25 pixels.
+*/
+section#left nav.vertical h1 {
+  border-radius: 25px 25px 0 0;
+}
+
+
+/* Center Article Styles */
+
+/*
+Step 9:
+Create a style rule for the section#center article selector that adds the following:
+a) a radial gradient to the background with a white center with a color stop
+of 30% transitioning to rgb(151, 151, 151),
+b) a 1-pixel solid border with color value rgb(151, 151, 151) and a radius of
+50 pixels,
+c) a box shadow with horizontal and vertical offsets of 10 pixels with a
+20-pixel blur and a color of rgb(51, 51, 51).
+*/
+section#center article {
+  background: radial-gradient(white 30%, rgb(151, 151, 151));
+  border: 1px solid rgb(151, 151, 151);
+  border-radius: 50px;
+  box-shadow: 10px 10px 20px rgb(51, 51, 51);
+}
+
+/* Blockquote Styles */
+
+/*
+Step 10:
+Create a style rule that does the following:
+a) sets the background image to the sf_speech.png with no tiling and a
+horizontal and vertical size of 100% to cover the entire block quote,
+b) uses the drop-shadow filter to add a drop shadow around the speech bubble
+with horizontal and vertical offsets of 5 pixels, a blur of 10 pixels and
+the color rgb(51, 51, 51).
+*/
+blockquote {
+  background: url(sf_speech.png) no-repeat;
+  background-size: 100% 100%;
+  filter: drop-shadow(5px 5px 10px rgb(51, 51, 51));
+}
+
+/*
+Step 11:
+Create a style rule for the selector cite img that sets the border radius to 50%
+*/
+cite img {
+  border-radius: 50%;
+}

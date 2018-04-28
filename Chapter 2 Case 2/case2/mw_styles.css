@@ -1,0 +1,215 @@
+﻿/*
+step 1:
+insert the @charset rule, setting style sheet to utf-8
+*/
+@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 2
+   Case Problem 2
+
+   Bike the Mountains Tour Style Sheet
+   Author: Thinh Pham & 244079
+   Date: 1/31/2018
+
+   Filename: mw_styles.css
+
+*/
+
+
+/* Structural Styles */
+
+/*
+step 2:
+Create a style rule that sets the background color of the browser window
+*/
+html {
+	background-color: rgb(173, 189, 227);
+}
+
+/*
+step 5:
+Sets the body background color
+Sets the body font to the font stack
+*/
+body {
+	background-color: rgb(227, 210, 173);
+  font-family: Century Gothic, sans-serif;
+}
+
+/*
+step 6:
+Create a style rule to display the "body footer" meaning body > footer
+Set the  background color
+Set the top and bottom padding space to 5 pixels.
+*/
+body > footer {
+	background-color: rgb(208, 184, 109);
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+/*
+step 7:
+Create a style rule for address; not sure if it's in body or not
+Display the text in a normal font
+Font size of 0.9em,
+Horizontally center the text
+Set the top and bottom padding space to 10 pixels.
+*/
+body > footer > address {
+	font: normal;
+	font-size: 0.9em;
+	text-align: center; /* To horizontally center text */
+	vertical-align: middle; /* To horizontally center text */
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/* Heading Styles */
+
+/*
+step 8:
+Create a style rule to set the font weight to normal.
+*/
+h1, h2 {
+	font-weight: normal;
+}
+
+/* Navigation Styles */
+
+/*
+step 9:
+Create a style rule for the nav > ul selector to removes all list markers
+Sets the line height
+Sets the font size
+*/
+nav > ul {
+	list-style-type: none;
+	line-height: 2em;
+	font-size: 0.9em;
+}
+
+/*
+step 10:
+Create a style rule to remove the underlining from the hypertext link
+Set the text color
+*/
+nav > ul > li> a:link, nav > ul > li > a:visited {
+	color: rgb(43, 59, 125);
+	text-decoration: none;
+}
+
+/*
+step 11:
+For every hovered or active link within the navigation list,
+Create a style rule to set the text color
+*/
+nav > ul > li > a:hover, nav > ul > li > a:active {
+	color: rgb(212, 35, 35);
+	/* text-decoration: underline; */
+}
+
+/* Article Styles */
+
+/*
+step 12:
+An article with the ID “tour_summary”. Starting with the heading.
+Create a style rule for h1 elements nested within the tour_summary article that
+Sets the font size and the letter spacing
+
+Note:
+article.tour_summary DOESN'T work article#tour_summary DOES
+Don't use > for h1, look at the code
+*/
+article#tour_summary h1 {
+	font-size: 2.2em;
+	letter-spacing: 0.2em;
+}
+
+/*
+step 13:
+Create a style rule for paragraphs within the tour_summary article
+Sets the font size
+*/
+article#tour_summary p {
+	font-size: 1.1em;
+}
+
+/*
+step 14:
+The first line in the tour_summary article to appear in small capital letters.
+Create a style rule that displays the first line of the first paragraph
+Sets the font size and in small caps.
+
+*/
+article#tour_summary > p:first-of-type, article#tour_summary > p:first-line {
+	font-size: 1.2em;
+	font: small-caps;
+}
+
+/* Aside Styles */
+
+/*
+step 15:
+Create a style rule that sets the font size
+*/
+aside#tour_itinerary h1 {
+	font-size: 1.2em;
+}
+
+/*
+step 16:
+Set the font size for h2
+*/
+aside#tour_itinerary h2 {
+	font-size: 0.9em;
+}
+
+/*
+step 17:
+Set the font size for p
+*/
+aside#tour_itinerary p {
+	font-size: 0.8em;
+}
+
+/*
+step 18:
+Use this color for odd
+Use this color for even
+*/
+aside#tour_itinerary > h2:nth-of-type(odd),
+aside#tour_itinerary > p:nth-of-type(odd)  {
+		color: rgb(79, 91, 40);
+}
+
+aside#tour_itinerary > h2:nth-of-type(even),
+aside#tour_itinerary > p:nth-of-type(even) {
+     color: rgb(81, 95, 175);
+}
+
+/* Blockquote Styles */
+
+/*
+step 19:
+Create a style rule that sets background color and text color
+*/
+blockquote {
+	background-color: rgb(173, 189, 227);
+	color: rgba(255, 255, 255, 0.65);
+}
+
+/*
+step 20:
+Paragraph within Blockquote do this:
+Padding top/bottom with this
+Padding left/right with this
+*/
+blockquote > p {
+	padding-top: 2.5px;
+	padding-bottom: 2.5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
